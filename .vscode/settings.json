@@ -1,5 +1,7 @@
 {
     "workbench.colorTheme": "Default Light+",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.preferredDarkColorTheme": "Default Light+"
+    "workbench.preferredDarkColorTheme": "Default Light+",
+    "editor.fontSize": 14,
+    "editor.tabSize": 5
 }
