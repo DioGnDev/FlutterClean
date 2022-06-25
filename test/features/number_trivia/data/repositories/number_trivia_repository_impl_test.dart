@@ -42,11 +42,11 @@ void main() {
   group('get concrete number trivia', () {
     test('should check if the device is online', () {
       //arrange
-      when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+      when(() => mockNetworkInfo.isConnected()).thenAnswer((_) async => true);
       //act
       repository.getConcreteNumberTrivia(number: tNumber);
       //assert
-      verify(() => mockNetworkInfo.isConnected);
+      verify(() => mockNetworkInfo.isConnected());
     });
   });
 
@@ -55,7 +55,9 @@ void main() {
     () {
       // This setUp applies only to the 'device is online' group
       setUp(() {
-        when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+        when(() => mockNetworkInfo.isConnected()).thenAnswer((_) async => true);
+        when(() => mockLocalDataSource.cacheNumberTrivia(numberTrivia))
+            .thenAnswer((_) => Future.value());
       });
 
       test(
@@ -117,7 +119,8 @@ void main() {
     'device is offline',
     () {
       setUp(() {
-        when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => false);
+        when(() => mockNetworkInfo.isConnected())
+            .thenAnswer((_) async => false);
       });
 
       test(
