@@ -2,6 +2,7 @@
     "workbench.colorTheme": "Visual Studio Light",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.preferredDarkColorTheme": "Default Light+",
-    "editor.fontSize": 16,
-    "editor.tabSize": 5
+    "editor.fontSize": 13,
+    "editor.tabSize": 5,
+    "editor.accessibilityPageSize": 10
 }
