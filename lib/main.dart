@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'features/pages/number_trivia_app.dart';
+import 'injection_container.dart' as di;
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      title: 'Number Trivia',
       home: NumberTriviaApp(),
     );
   }
